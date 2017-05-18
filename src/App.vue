@@ -4,7 +4,7 @@
             <navbar></navbar>
         </div>
         <div class="admin-body" role="main">
-            <div class="container">
+            <div class="container-fluid">
                 <router-view></router-view>
             </div>
         </div>
@@ -27,15 +27,20 @@
         .admin {
             height: 100vh;
             display: flex;
+
+            .admin-sidebar {
+                width: 300px;
+                overflow: auto;
+            }
+
+            .admin-body {
+                flex: 1;
+                overflow: auto;
+            }
         }
 
-        .admin .admin-sidebar {
-            width: 300px;
-            overflow: auto;
-        }
-
-        .admin .admin-body {
-            flex: 1;
+        .vh-100 {
+            height: 100vh;
             overflow: auto;
         }
     }
