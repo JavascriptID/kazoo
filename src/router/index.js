@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Dashboard from '@/views/Dashboard';
-import mailRoutes from '../modules/mail/router';
+import messagesRoutes from '@/modules/messages/router';
+import peopleRoutes from '@/modules/people/router';
 
 Vue.use(Router);
 
@@ -18,7 +19,7 @@ const baseRoutes = [
   },
 ];
 
-const routes = baseRoutes.concat(mailRoutes);
+const routes = baseRoutes.concat(messagesRoutes, peopleRoutes);
 export default new Router({
   routes,
 });

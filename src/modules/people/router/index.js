@@ -1,23 +1,23 @@
-import Mail from '../views/Mail';
+import People from '../views/People';
 import Welcome from './../views/Welcome';
 import Details from './../views/Details';
 
 export default [
   {
-    path: '/mail',
-    name: 'mail',
-    component: Mail,
-    title: 'Mail',
-    redirect: { name: 'mail-welcome' },
+    path: '/people',
+    name: 'people',
+    component: People,
+    title: 'People',
+    redirect: { name: 'people-welcome' },
     children: [
       {
         path: 'welcome',
-        name: 'mail-welcome',
+        name: 'people-welcome',
         component: Welcome,
       },
       {
         path: ':id',
-        name: 'mail-details',
+        name: 'people-details',
         component: Details,
       },
     ],

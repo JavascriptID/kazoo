@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mail from './../modules/mail/store';
+import messages from '@/modules/messages/store';
+import people from '@/modules/people/store';
 
 Vue.use(Vuex);
 
@@ -8,7 +9,8 @@ const debug = process.env.NODE_ENV !== 'production';
 
 export default new Vuex.Store({
   modules: {
-    mail,
+    messages,
+    people,
   },
   strict: debug,
 });

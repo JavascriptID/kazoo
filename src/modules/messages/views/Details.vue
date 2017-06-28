@@ -2,31 +2,31 @@
     <div class="py-3">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <router-link :to="{name: 'mail'}">
+                <router-link :to="{name: 'messages'}">
                     mail
                 </router-link>
             </li>
             <li class="breadcrumb-item active">
-                {{item.name}}
+                {{ item.name }}
             </li>
         </ol>
-        <h1>{{item.name}}</h1>
+        <h1>{{ item.name }}</h1>
         <div v-html="item.content"></div>
     </div>
 </template>
 
 <script>
   export default {
-    name: 'mail-details',
+    name: 'messages-details',
     computed: {
       item() {
-        return this.$store.getters['mail/getItem'](this.$route.params);
+        return this.$store.getters['messages/getItem'](this.$route.params);
       },
     },
     methods: {
       isItemRead(item) {
         if (!item.read) {
-          this.$store.dispatch('mail/readItem', item);
+          this.$store.dispatch('messages/readItem', item);
         }
       },
     },

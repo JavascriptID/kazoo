@@ -2,7 +2,7 @@
     <div class="py-3">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <router-link :to="{name: 'mail'}">
+                <router-link :to="{name: 'messages'}">
                     mail
                 </router-link>
             </li>
@@ -19,6 +19,6 @@
 
 <script>
   export default {
-    name: 'mail-welcome',
+    name: 'messages-welcome',
   };
 </script>

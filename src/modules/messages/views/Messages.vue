@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-4 col-xl-3 bg-info vh-100">
             <div class="py-1" v-for="item in items" key="item.id">
-                <router-link :to="{name: 'mail-details', params: { id: item.id}}" class="d-block text-white" :class="{'font-weight-bold': !item.read}">
-                    {{item.name}}
+                <router-link :to="{name: 'messages-details', params: { id: item.id }}" class="d-block text-white" :class="{'font-weight-bold': !item.read}">
+                    {{ item.name }}
                 </router-link>
             </div>
         </div>
@@ -15,10 +15,10 @@
 
 <script>
   export default {
-    name: 'mail',
+    name: 'messages',
     computed: {
       items() {
-        return this.$store.getters['mail/getItems'];
+        return this.$store.getters['messages/getItems'];
       },
     },
   };
