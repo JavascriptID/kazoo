@@ -1,6 +1,7 @@
 import People from '../views/People';
 import Welcome from './../views/Welcome';
 import Details from './../views/Details';
+import Create from './../views/Create';
 
 export default [
   {
@@ -14,6 +15,11 @@ export default [
         path: 'welcome',
         name: 'people-welcome',
         component: Welcome,
+      },
+      {
+        path: 'create',
+        name: 'people-create',
+        component: Create,
       },
       {
         path: ':id',
