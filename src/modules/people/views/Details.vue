@@ -7,13 +7,20 @@
                 </router-link>
             </li>
             <li class="breadcrumb-item active">
-                {{ item.name }}
+                {{ person.name }}
             </li>
         </ol>
-        <h1>{{ item.name }}</h1>
+        <h1>{{ person.name }}</h1>
         <div>
             <i class="fa fa-phone"></i>
-            {{ item.phone }}
+            <img :src="person.image" alt="">
+            <div>
+                {{ person.phone }}
+            </div>
+            <div>
+                {{ person.function }}
+            </div>
+            <a @click.prevent="removePerson()" href="#">remove</a>
         </div>
     </div>
 </template>
@@ -22,23 +29,16 @@
   export default {
     name: 'people-details',
     computed: {
-      item() {
+      person() {
         return this.$store.getters['people/getItem'](this.$route.params);
       },
     },
     methods: {
-      isItemRead(item) {
-        if (!item.read) {
-          this.$store.dispatch('people/readItem', item);
-        }
-      },
-    },
-    mounted() {
-      this.isItemRead(this.item);
-    },
-    watch: {
-      item(item) {
-        this.isItemRead(item);
+      removePerson() {
+        this.$store.dispatch('people/removePerson', this.person.id);
+        this.$router.push({
+          name: 'people-welcome',
+        });
       },
     },
   };
