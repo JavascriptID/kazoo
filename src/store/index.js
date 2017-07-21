@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import messages from '@/modules/messages/store';
 import people from '@/modules/people/store';
 
@@ -12,5 +13,8 @@ export default new Vuex.Store({
     messages,
     people,
   },
+  plugins: [createPersistedState({
+    key: 'kazoo',
+  })],
   strict: debug,
 });

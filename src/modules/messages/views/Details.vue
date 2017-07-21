@@ -29,13 +29,21 @@
           this.$store.dispatch('messages/readItem', item);
         }
       },
+      addTimeline() {
+        this.$store.dispatch('timeline/addTimelineItem', {
+          title: this.item.name,
+          route: this.$route,
+        });
+      },
     },
     mounted() {
       this.isItemRead(this.item);
+      this.addTimeline();
     },
     watch: {
       item(item) {
         this.isItemRead(item);
+        this.addTimeline();
       },
     },
   };

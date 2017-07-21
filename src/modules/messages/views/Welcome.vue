@@ -20,5 +20,11 @@
 <script>
   export default {
     name: 'messages-welcome',
+    mounted() {
+      this.$store.dispatch('timeline/addTimelineItem', {
+        title: 'Messages',
+        route: this.$route,
+      });
+    },
   };
 </script>

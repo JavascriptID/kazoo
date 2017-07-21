@@ -20,5 +20,11 @@
 <script>
   export default {
     name: 'people-welcome',
+    mounted() {
+      this.$store.dispatch('timeline/addTimelineItem', {
+        title: 'People',
+        route: this.$route,
+      });
+    },
   };
 </script>
