@@ -1,11 +1,18 @@
 import Vue from 'vue';
+import Router from 'vue-router';
 import timeline from 'vue-route-timeline';
+import VueAnalytics from 'vue-analytics';
 import App from './App';
 import router from './router';
 import store from './store';
 
 Vue.config.productionTip = false;
-Vue.use(timeline.plugin, store);
+Vue.use(VueAnalytics, {
+  id: 'UA-83598448-1',
+  router,
+});
+Vue.use(timeline.plugin, store, router);
+Vue.use(Router);
 
 /* eslint-disable no-new */
 new Vue({

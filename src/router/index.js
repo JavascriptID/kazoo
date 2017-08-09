@@ -1,10 +1,7 @@
-import Vue from 'vue';
 import Router from 'vue-router';
 import Dashboard from '@/views/Dashboard';
 import messagesRoutes from '@/modules/messages/router';
 import peopleRoutes from '@/modules/people/router';
-
-Vue.use(Router);
 
 const baseRoutes = [
   {

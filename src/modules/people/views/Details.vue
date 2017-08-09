@@ -20,7 +20,10 @@
             <div>
                 {{ person.function }}
             </div>
-            <a @click.prevent="removePerson()" href="#">remove</a>
+            <router-link :to="{name: 'people-edit', params: { id: person.id }}" class="btn btn-info">
+                edit
+            </router-link>
+            <a @click.prevent="removePerson()" href="#" class="btn btn-danger">remove</a>
         </div>
     </div>
 </template>

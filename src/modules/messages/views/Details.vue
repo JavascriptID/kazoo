@@ -30,10 +30,7 @@
         }
       },
       addTimeline() {
-        this.$store.dispatch('timeline/addTimelineItem', {
-          title: this.item.name,
-          route: this.$route,
-        });
+        this.$routeTimeline.set(this.item.name, 'Message');
       },
     },
     mounted() {
