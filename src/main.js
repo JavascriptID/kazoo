@@ -10,6 +10,15 @@ Vue.config.productionTip = false;
 Vue.use(VueAnalytics, {
   id: 'UA-83598448-1',
   router,
+  autoTracking: {
+    pageviewTemplate(route) {
+      return {
+        page: `/kazoo${route.path}`,
+        title: document.title,
+        location: window.location.href,
+      };
+    },
+  },
 });
 Vue.use(timeline.plugin, store, router);
 Vue.use(Router);
