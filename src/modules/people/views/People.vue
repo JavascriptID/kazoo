@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-md-4 col-xl-3 bg-inverse vh-100">
+        <div class="col-md-4 col-xl-3 bg-dark vh-100">
             <div class="py-3">
                 <router-link :to="{name: 'people-create'}" class="btn btn-outline-primary btn-block">Add person</router-link>
             </div>

@@ -3,7 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -24,13 +24,16 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  resolveLoader: {
+    modules: [resolve('node_modules')]
+  },
   module: {
     rules: [
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src'), resolve('test'), resolve('node_modules')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -48,12 +51,30 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-          loader: "style-loader" // creates style nodes from JS strings
+          loader: "style-loader",
+          options: {
+            importLoaders: 1,
+            includePaths: [
+              resolve('node_modules')
+            ],
+          }
         }, {
-          loader: "css-loader" // translates CSS into CommonJS
+          loader: "css-loader",
+          options: {
+            importLoaders: 1,
+            includePaths: [
+              resolve('node_modules')
+            ],
+          }
         }, {
-          loader: "sass-loader" // compiles Sass to CSS
-        }]
+          loader: "sass-loader",
+          options: {
+            importLoaders: 1,
+            includePaths: [
+              resolve('node_modules')
+            ],
+          }
+        }],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

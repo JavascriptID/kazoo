@@ -10,6 +10,7 @@ export default [
     name: 'people',
     component: People,
     title: 'People',
+    icon: 'fa-users',
     redirect: { name: 'people-welcome' },
     children: [
       {

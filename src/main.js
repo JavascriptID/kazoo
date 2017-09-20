@@ -20,7 +20,7 @@ Vue.use(VueAnalytics, {
     },
   },
 });
-Vue.use(timeline.plugin, store, router);
+Vue.use(timeline.plugin, { store, router });
 Vue.use(Router);
 
 /* eslint-disable no-new */

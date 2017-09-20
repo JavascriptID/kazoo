@@ -1,6 +1,6 @@
 <template>
     <div class="admin">
-        <div class="admin-sidebar bg-faded">
+        <div class="admin-sidebar bg-light">
             <navbar></navbar>
         </div>
         <div class="admin-body" role="main">
@@ -21,15 +21,22 @@
 </script>
 
 <style lang="scss">
-    @import '../node_modules/bootstrap/scss/bootstrap.scss';
+    $enable-rounded: false;
+    $fa-font-path: "~font-awesome/fonts";
+    $kazoo-grid-breakpoint: 992px;
 
-    @media screen and (min-width: 992px) {
+    @import '~bootstrap/scss/bootstrap';
+    @import '~font-awesome/scss/font-awesome';
+    @import '~vue-route-timeline/src/style/vue-route-timeline';
+    @import './scss/tabbar';
+
+    @media screen and (min-width: $kazoo-grid-breakpoint) {
         .admin {
             height: 100vh;
             display: flex;
 
             .admin-sidebar {
-                width: 300px;
+                width: 280px;
                 overflow: auto;
             }
 

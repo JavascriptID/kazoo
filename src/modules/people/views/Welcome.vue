@@ -21,10 +21,7 @@
   export default {
     name: 'people-welcome',
     mounted() {
-      this.$store.dispatch('timeline/addTimelineItem', {
-        title: 'People',
-        route: this.$route,
-      });
+      this.$routeTimeline.set('People', 'I see people');
     },
   };
 </script>

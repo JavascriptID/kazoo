@@ -8,6 +8,7 @@ const baseRoutes = [
     path: '/dashboard',
     name: 'dashboard',
     title: 'Dashboard',
+    icon: 'fa-tachometer',
     component: Dashboard,
   },
   {

@@ -1,21 +1,17 @@
 <template>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded d-block">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <router-link :to="{name: 'dashboard'}" class="navbar-brand">
+    <nav class="tabbar tabbar-toggleable-md">
+        <router-link :to="{name: 'dashboard'}" class="tabbar-brand">
             Kazoo
         </router-link>
 
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto d-block">
-                <li class="nav-item" v-for="route in routes">
-                    <router-link :to="route" class="nav-link px-0" active-class="active">
-                        {{ route.title }}
-                    </router-link>
-                </li>
-            </ul>
-        </div>
+        <ul class="tabbar-nav bg-light">
+            <li class="tabbar-item" v-for="route in routes">
+                <router-link :to="route" class="tabbar-link text-dark" active-class="active">
+                    <i class="fa tabbar-icon" :class="route.icon"></i>
+                    {{ route.title }}
+                </router-link>
+            </li>
+        </ul>
     </nav>
 </template>
 

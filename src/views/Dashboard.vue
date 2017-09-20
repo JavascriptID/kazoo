@@ -9,10 +9,7 @@
   export default {
     name: 'dashboard',
     mounted() {
-      this.$store.dispatch('timeline/addTimelineItem', {
-        title: 'Dashboard',
-        route: this.$route,
-      });
+      this.$routeTimeline.set('Dashboard', 'Im on a dashboard');
     },
     data() {
       return {

@@ -8,6 +8,7 @@ export default [
     name: 'messages',
     component: Messages,
     title: 'Messages',
+    icon: 'fa-comments',
     redirect: { name: 'messages-welcome' },
     children: [
       {
