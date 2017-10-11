@@ -17,4 +17,23 @@ export default new Vuex.Store({
     key: 'kazoo',
   })],
   strict: debug,
+  state: {
+    count: 0,
+  },
+  mutations: {
+    updateCount(state, payload) {
+      Vue.set(state, 'count', state.count + payload);
+    },
+  },
+  getters: {
+    getCount: state => state.count,
+  },
+  actions: {
+    incrementCount(context) {
+      context.commit('updateCount', 1);
+    },
+    decrementCount(context) {
+      context.commit('updateCount', -1);
+    },
+  },
 });

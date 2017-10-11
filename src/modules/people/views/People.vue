@@ -4,7 +4,7 @@
             <div class="py-3">
                 <router-link :to="{name: 'people-create'}" class="btn btn-outline-primary btn-block">Add person</router-link>
             </div>
-            <router-link :to="{name: 'people-details', params: { id: item.id }}" class="row py-2" v-for="item in items" key="item.id">
+                <router-link :to="{name: 'people-details', params: { id: item.id }}" class="row py-2" v-for="item in items" key="item.id">
                 <div class="col-3 col-md-4">
                     <img :src="item.image" alt="" class="img-fluid rounded-circle bg-faded img-thumbnail">
                 </div>
