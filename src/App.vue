@@ -1,7 +1,7 @@
 <template>
     <div class="admin">
         <div class="admin-sidebar bg-light">
-            <navbar></navbar>
+            <the-navbar></the-navbar>
         </div>
         <div class="admin-body" role="main">
             <div class="container-fluid">
@@ -12,11 +12,14 @@
 </template>
 
 <script>
-  import Navbar from './components/Navbar';
+  import TheNavbar from './components/TheNavbar';
 
   export default {
-    components: { Navbar },
+    components: { TheNavbar },
     name: 'app',
+//    mounted() {
+//      this.$store.dispatch('initialize', null, { root: true });
+//    },
   };
 </script>
 

@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'navbar',
+    name: 'the-navbar',
     computed: {
       routes() {
         const routes = [];

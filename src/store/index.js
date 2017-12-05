@@ -29,6 +29,9 @@ export default new Vuex.Store({
     getCount: state => state.count,
   },
   actions: {
+    // initialize(state) {
+    //   console.log(state);
+    // },
     incrementCount(context) {
       context.commit('updateCount', 1);
     },
