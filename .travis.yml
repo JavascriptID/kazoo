@@ -7,7 +7,7 @@ cache:
 script:
   - npm test
   - npm run build
-  - if [ $TRAVIS_TEST_RESULT -eq 0 ]; npm run gh-pages-travis; fi
+  - if [ $TRAVIS_TEST_RESULT -eq 0 ]; **npm run gh-pages-travis**; fi
 env:
   global:
     - DEPLOY_BRANCH="master"
